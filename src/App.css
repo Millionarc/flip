@@ -1,0 +1,354 @@
+/* src/App.css */
+
+/* Import the fonts */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root, .App {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.App {
+  background-color: #000000; /* Ensures the entire app has a black background */
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Common styles for all sections */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For positioning elements like scroll indicator */
+  padding: 15px; /* Adds padding around content */
+  width: 100%; /* Ensure sections take full width */
+}
+
+/* Section 1 Styles */
+.section-1 .content {
+  text-align: center;
+  width: 80%; /* Adjust as needed */
+  max-width: 800px; /* Limits the width on larger screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px; /* Positions content lower */
+}
+
+.main-text {
+  color: #FFFFFF;
+  font-size: 5.75vw; /* Increased from 5vw by ~15% */
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif; /* Applied font */
+  margin-bottom: 10px; /* Reduced margin to accommodate small text */
+}
+
+.small-text {
+  color: #FFFFFF;
+  font-size: 0.86rem; /* Increased from 0.75rem by ~15% */
+  font-family: 'Orbitron', sans-serif; /* Consistent font */
+  margin-bottom: 10px; /* Reduced space between small texts */
+  opacity: 0.7; /* Slightly transparent for subtlety */
+  word-wrap: break-word; /* Ensures long text wraps */
+}
+
+.next-up-text {
+  font-size: 0.75rem; /* Same as .small-text for consistency */
+  margin-bottom: 20px; /* Slight margin below */
+  word-wrap: break-word; /* Ensures long text wraps */
+}
+
+/* Styles for Company Links */
+.company-link {
+  color: inherit; /* Inherit color from parent (full opacity text) */
+ /* text-decoration: none;  Remove underline */
+  font-size: inherit; /* Inherit font size from parent */
+  font-family: inherit; /* Inherit font family from parent */
+  opacity: 1; /* Full opacity */
+  cursor: pointer; /* Indicates interactivity */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transitions */
+}
+
+.company-link:hover {
+  color: #CCCCCC; /* Slight color change on hover for subtle feedback */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Company Identifier Box */
+.box {
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 20px 40px;
+  display: inline-block;
+  margin-bottom: 30px; /* Space between boxes and scroll indicator */
+  text-decoration: none; /* Remove underline if it's an anchor */
+  cursor: pointer; /* Indicates it's clickable */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 100%; /* Prevents box from exceeding screen width */
+  word-break: break-all; /* Breaks long words to prevent overflow */
+}
+
+.box:hover {
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.box-text {
+  color: #FFFFFF;
+  font-size: 1.1rem; /* Slightly larger font size */
+  font-family: 'Orbitron', sans-serif; /* Applied font */
+  margin: 0;
+  word-wrap: break-word; /* Ensures long text wraps inside the box */
+}
+
+/* "JOIN" Box Specific Styles */
+.buy-box {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  cursor: pointer; /* Indicates it's clickable */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 100%; /* Prevents box from exceeding screen width */
+}
+
+.buy-box:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Darker on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.buy-box .box-text {
+  /* Inherit styles from .box-text */
+}
+
+/* Scroll Indicator Styles */
+.scroll-indicator {
+  position: absolute;
+  bottom: 25px; /* 25px from the bottom of the section */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif; /* Ensures consistent font */
+  /* Bouncing animation */
+  animation: bounce 2s infinite;
+  /* Subtle transition on hover */
+  transition: color 0.3s ease;
+  z-index: 10; /* Ensures it stays above other elements */
+}
+
+.scroll-indicator:hover {
+  color: #CCCCCC;
+}
+
+/* Bouncing animation for the scroll indicator */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+
+/* Feedback Message Styles */
+.copy-feedback {
+  color: #FFFFFF;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-family: 'Orbitron', sans-serif; /* Ensures consistent font */
+  font-size: 0.8rem; /* Small text size */
+  opacity: 0.75;
+  transition: opacity 0.75s ease;
+}
+
+/* Section 2 Styles (Manifesto) */
+.section-2 {
+  min-height: 150vh; /* Increased height for more scroll space */
+  background-color: #000000; /* Maintains black background */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 15px; /* Ensures 15px offset */
+}
+
+.manifesto-content {
+  border: 2px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 30px 60px;
+  width: 70%; /* Takes up approximately 70% of the screen width */
+  max-width: 1200px; /* Limits the maximum width for larger screens */
+  margin: 0 auto; /* Centers the box horizontally */
+}
+
+.manifesto-title {
+  color: #FFFFFF;
+  font-size: 3vw; /* Smaller font size */
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.manifesto-text {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  text-align: left;
+  margin-bottom: 15px; /* Space between paragraphs */
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Section 3 Styles */
+.section-3 {
+  min-height: 100vh; /* Full viewport height */
+  background-color: #000000; /* Maintains black background */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 15px; /* Adds padding around content */
+}
+
+.socials-container {
+  width: 100%;
+  max-width: 1200px; /* Limits the maximum width for larger screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join-us {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px; /* Space between "Join Us" and icons */
+}
+
+.socials-content {
+  display: flex;
+  gap: 40px; /* Space between icons */
+}
+
+.social-icon {
+  width: 60px; /* Adjust size as needed */
+  height: 60px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer; /* Indicates interactivity */
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Enlarge on hover */
+  opacity: 0.8; /* Slight transparency on hover */
+}
+
+/* Section 4 Styles (Current and Next Companies) */
+/* Removed Section 4 as per user instruction */
+/* If you decide to keep it for future use, you can comment it out or remove related JSX */
+
+.section-4 {
+  display: none; /* Hide Section 4 */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .main-text {
+    font-size: 8vw; /* Adjust as needed */
+  }
+
+  .box {
+    padding: 15px 30px;
+  }
+
+  .small-text {
+    font-size: 0.86rem; /* Increased from 0.75rem by ~15% */
+    margin-bottom: 15px; /* Reduced space */
+  }
+
+  .next-up-text {
+    font-size: 0.75rem; /* Same as .small-text for consistency */
+    margin-bottom: 10px; /* Reduced space */
+  }
+
+  .manifesto-content {
+    width: 90%;
+    padding: 20px 40px;
+  }
+
+  .manifesto-title {
+    font-size: 4vw;
+  }
+
+  .manifesto-text {
+    font-size: 1rem;
+  }
+
+  .scroll-indicator {
+    font-size: 1rem;
+    bottom: 15px; /* Reduce bottom margin for better visibility */
+  }
+
+  .socials-content {
+    gap: 20px; /* Reduced space between icons on smaller screens */
+  }
+
+  .social-icon {
+    width: 40px; /* Smaller icons on smaller screens */
+    height: 40px;
+  }
+
+  .join-us {
+    font-size: 2rem; /* Adjust font size on smaller screens */
+    margin-bottom: 15px; /* Adjust spacing */
+  }
+
+  .company-link {
+    font-size: 0.75rem; /* Match parent font size */
+  }
+
+  .next-up-link {
+    font-size: 0.75rem; /* Same as .company-link */
+  }
+
+  .next-up-delta {
+    font-size: 0.65rem; /* Even smaller for delta */
+  }
+
+  /* Adjust Scroll Indicator Position on Mobile */
+  .scroll-indicator {
+    bottom: 15px; /* Reduce bottom margin */
+  }
+}
+
+/* Additional Mobile-Specific Styles */
+@media (max-width: 480px) {
+  .main-text {
+    font-size: 10vw; /* Further adjust for very small screens */
+  }
+
+  .box {
+    padding: 10px 20px;
+  }
+
+  .manifesto-content {
+    padding: 15px 30px;
+  }
+
+  .scroll-indicator {
+    font-size: 1rem;
+    bottom: 10px; /* Further reduce bottom margin */
+  }
+
+  .copy-feedback {
+    font-size: 0.7rem; /* Smaller font size on very small screens */
+  }
+}

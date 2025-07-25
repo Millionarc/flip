@@ -1,0 +1,41 @@
+/* src/components/CompanyCard.css */
+
+.company-card {
+    margin-bottom: 20px; /* Space between company cards */
+  }
+  
+  .company-card.current h3,
+  .company-card.next-up h4 {
+    color: #00BFFF; /* Distinct color for titles */
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .company-link {
+    color: #00BFFF; /* Bright blue for links */
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+  }
+  
+  .company-link:hover {
+    text-decoration: underline;
+  }
+  
+  .delta {
+    color: #FFFFFF;
+    font-size: 1rem;
+    margin-top: 5px;
+    opacity: 0.8;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .company-link {
+      font-size: 1.2rem;
+    }
+  
+    .delta {
+      font-size: 0.9rem;
+    }
+  }
+  
